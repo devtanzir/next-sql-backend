@@ -31,6 +31,8 @@ const {
 
 const app = express();
 
+app.options("*", cors());
+
 app.use(express.json());
 
 const port = process.env.PORT || 8000 || 5001;
