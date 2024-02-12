@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const {
   readCategory,
   readCategoryId,
@@ -32,6 +33,7 @@ const app = express();
 
 app.use(express.json());
 
+const port = process.env.PORT || 8000 || 5001;
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "Ops There are Nothing to Show. Please Go to /category",
@@ -279,6 +281,6 @@ app.get("/sub_category/no_of_dua", (req, res) => {
   });
 });
 
-app.listen(4000, () => {
-  console.log("Server is lisning on port 4000");
+app.listen(port, () => {
+  console.log(`Server is lisning on port ${port}`);
 });
