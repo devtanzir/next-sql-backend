@@ -34,7 +34,7 @@ const app = express();
 app.use(express.json());
 
 const port = process.env.PORT || 8000 || 5001;
-app.get("https://next-sql-backend.vercel.app/", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).json({
     message: "Ops There are Nothing to Show. Please Go to /category",
   });
@@ -281,6 +281,7 @@ app.get("/sub_category/no_of_dua", (req, res) => {
   });
 });
 
-app.listen(port, () => {
+app.listen(port, (err) => {
+  if (err) console.error(err);
   console.log(`Server is lisning on port ${port}`);
 });
