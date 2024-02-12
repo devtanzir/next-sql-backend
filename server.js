@@ -34,7 +34,7 @@ const app = express();
 app.use(express.json());
 
 const port = process.env.PORT || 8000 || 5001;
-app.get("/", (req, res) => {
+app.get("https://next-sql-backend.vercel.app/", (req, res) => {
   res.status(200).json({
     message: "Ops There are Nothing to Show. Please Go to /category",
   });
